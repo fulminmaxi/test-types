@@ -1,23 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import logo from "./logo.svg";
+import { ethers } from "ethers";
+import "./App.css";
+//@ts-expect-error
+import { Voting__factory } from "@uma/core/contract-types/ethers";
+const Voting = Voting__factory.connect(
+  "some address",
+  ethers.getDefaultProvider()
+);
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <pre>
+          <code>{JSON.stringify({ Voting }, null, 2)}</code>
+        </pre>
       </header>
     </div>
   );
