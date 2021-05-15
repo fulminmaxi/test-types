@@ -5,7 +5,7 @@ import "./App.css";
 import { EthersContracts } from "@uma/core";
 const { Voting__factory } = EthersContracts;
 const Voting = Voting__factory.connect(
-  "0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5",
+  "0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5", // Random address pulled from etherscan just to avoid erors.
   ethers.getDefaultProvider()
 );
 function App() {
