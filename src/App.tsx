@@ -2,10 +2,10 @@ import React from "react";
 import logo from "./logo.svg";
 import { ethers } from "ethers";
 import "./App.css";
-//@ts-expect-error
-import { Voting__factory } from "@uma/core/contract-types/ethers";
+import { EthersContracts } from "@uma/core";
+const { Voting__factory } = EthersContracts;
 const Voting = Voting__factory.connect(
-  "some address",
+  "0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5", // Random address pulled from etherscan just to avoid erors.
   ethers.getDefaultProvider()
 );
 function App() {
